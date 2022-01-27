@@ -4,7 +4,7 @@ A test of using an iframe for a "cell output".
 
 This test demonstrate how user-pluggable cell outputs (visualizations) might work in the future in Data-Forge Notebook v2.
 
-To try this out, first run the dev server for the chlid web page:
+To try this out, first run the dev server for the child web page (this web page serves the output plugin):
 
 ```bash
 cd child-page
@@ -12,7 +12,7 @@ npm install
 npm start
 ```
 
-Then open another terminal and run the dev server for the parent web page:
+Then open another terminal and run the dev server for the parent web page (this web page simulates the embedding of the output plugin):
 
 ```bash
 cd parent-page

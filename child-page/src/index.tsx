@@ -1,29 +1,41 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ApexCharts from 'apexcharts';
 
 class App extends React.Component {
 
     componentDidMount() {
         console.log(`Subscribing to messages from parent!`);
-        
+
         window.addEventListener("message", event => {
-            console.log(`Message from parent!`);
+            console.log(`Output plugin received message: `);
             console.log(event);
 
-            event.source?.postMessage({
-                msg: "Thanks so much for your wonderful message.",
-            }, "*");
-        });
+            const payload = event.data;
+            if (payload.name === "config") {
+                // 
+                // Configures the plugin.
+                //
+                const chart = new ApexCharts(document.querySelector("#chart"), payload.data);
+                chart.render();
 
-        setTimeout
+                event.source?.postMessage({
+                    name: "configured",
+                }, "*");
+            }
+        });
     }
 
     render() {
         return (
-            <div>
-                Hello from inside the iframe!
-            </div>
-        );                
+            <div 
+                id="chart" 
+                style={{
+                    width: "100%",
+                    height: "100%",
+                }}
+                />
+        );
     }
 }
 
