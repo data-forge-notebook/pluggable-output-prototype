@@ -62,10 +62,10 @@ class App extends React.Component {
                         The chart below is a separate web page hosted in an iframe. 
                     </p>
                     <p>
-                        The configuration for the chart is simple JSON data that is sent from the parent web page to the child web page. Therefore the parent page controls what is displayed in the output plugin.
+                        For DFN v2 the output for each code cell will be hosted in a iframe. Therefore an "output plugin" will simply be a web page. Anyone who can make a simple static web page will also be able to make an output plugin to upgrade DFN with custom visualisation capabilities. Some of these plugins will be embedded in DFN (the default set of output types) and others might simply be hosted on the web.
                     </p>
                     <p>
-                        For DFN v2 the output for each code cell will be hosted in a iframe. Therefore an "output plugin" will simply be a web page. Some of these plugins will be embedded in DFN (the default set of output types) and others might simply be hosted on the web.
+                        The configuration and data for the output plugin is a simple JSON data that is sent from DFN to the output plugin. This is how DFN controls what is displayed in the output plugin.
                     </p>
                 </div>
                 <div

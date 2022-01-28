@@ -1,10 +1,28 @@
 # pluggable-output-prototype
 
-This is a prototype of how pluggable cell outputs might work in [Data-Forge Notebook](https://www.data-forge-notebook.com/) v2.
+This is a prototype of how "pluggable cell outputs" (user creatable visualizations) might work in [Data-Forge Notebook](https://www.data-forge-notebook.com/) v2.
 
-This prototype demonstrate how user-pluggable cell outputs (visualizations) might work in the future in Data-Forge Notebook v2.
+[Click here to contribute to the discussion](https://github.com/data-forge-notebook/editor-core/issues/1)
 
-To try this out, first run the dev server for the child web page (this web page serves the output plugin):
+[Follow the developer on Twitter for more frequent news and updates](https://twitter.com/codecapers)
+
+## Get it running
+
+You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) installed.
+
+Open a terminal and clone this repository:
+
+```bash
+git clone https://github.com/data-forge-notebook/pluggable-output-prototype.git
+```
+
+Change directory into the local code repository:
+
+```bash
+cd pluggable-output-prototype
+```
+
+First run the dev server for the child web page (this web page serves the output plugin):
 
 ```bash
 cd child-page
