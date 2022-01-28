@@ -1,8 +1,8 @@
 # pluggable-output-prototype
 
-A test of using an iframe for a "cell output".  
+This is a prototype of how pluggable cell outputs might work in [Data-Forge Notebook](https://www.data-forge-notebook.com/) v2.
 
-This test demonstrate how user-pluggable cell outputs (visualizations) might work in the future in Data-Forge Notebook v2.
+This prototype demonstrate how user-pluggable cell outputs (visualizations) might work in the future in Data-Forge Notebook v2.
 
 To try this out, first run the dev server for the child web page (this web page serves the output plugin):
 

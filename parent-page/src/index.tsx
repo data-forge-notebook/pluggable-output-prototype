@@ -47,29 +47,43 @@ class App extends React.Component {
     render() {
         return (
             <div
+                className="container mx-auto"
                 style={{
-                    width: "100%",
+                    maxWidth: "800px",
                     padding: "15px",
                 }}
                 >
                 <div>
-                    <h1>Data-Forge Notebook v2 output plugin prototype</h1>
+                    <h1>Output plugin prototype</h1>
+                    <p className="mt-5">
+                        This is a prototype of how "pluggable cell outputs" might work in <a href="https://www.data-forge-notebook.com">Data-Forge Notebook</a> (DFN) v2.
+                    </p>
                     <p>
-                        Below is prototype "output plugin" for Data-Forge Notebook running in an iframe:
+                        The chart below is a separate web page hosted in an iframe. 
+                    </p>
+                    <p>
+                        The configuration for the chart is simple JSON data that is sent from the parent web page to the child web page. Therefore the parent page controls what is displayed in the output plugin.
+                    </p>
+                    <p>
+                        For DFN v2 the output for each code cell will be hosted in a iframe. Therefore an "output plugin" will simply be a web page. Some of these plugins will be embedded in DFN (the default set of output types) and others might simply be hosted on the web.
                     </p>
                 </div>
                 <div
+                    className="rounded"
                     style={{
                         marginTop: "10px",
                         padding: "15px",
-                        border: "1px solid red",
+                        border: "1px solid #e7e7e7",
                         height: "500px",
+                        boxShadow: "0 6px 14px 0 rgba(33,35,68,.05)",
+                        backgroundColor: "white",
                     }}
                     >
                     <iframe 
+                        className="mx-auto"
                         style={{
                             width: "100%",
-                            height: "100%",
+                            height: "490px",
                         }}
                         ref={this.iframeRef}
                         src={this.url}
@@ -82,4 +96,4 @@ class App extends React.Component {
     }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"))0
