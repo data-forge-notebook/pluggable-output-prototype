@@ -6,6 +6,8 @@ This is a prototype of how "pluggable cell outputs" (user creatable visualizatio
 
 [Follow the developer on Twitter for more frequent news and updates](https://twitter.com/codecapers)
 
+[Click for the main DFN code repository](https://github.com/data-forge-notebook/editor-core)
+
 ## Get it running
 
 You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) installed.
