@@ -6,6 +6,11 @@ class App extends React.Component<{}, { pluginContent?: string }> {
 
     private iframeRef: React.RefObject<HTMLIFrameElement>;
 
+    //
+    // If you are trying to load this from a file, you will need to change this path.
+    //
+    private file = "file://c:/projects/data-forge-notebook/prototypes/pluggable-output-prototype/child-page/out/index.html"; 
+
     private url = "http://127.0.0.1:5000";
 
     constructor(props: any) {
@@ -100,8 +105,9 @@ class App extends React.Component<{}, { pluginContent?: string }> {
                         ref={this.iframeRef}
 
                         //
-                        // Uncomment this to load from file.
+                        // Uncomment this to load using file protocol.
                         //
+                        // src={this.file}
 
                         //
                         // Uncomment this for the live URL.
