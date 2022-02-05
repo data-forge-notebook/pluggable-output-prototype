@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "s": "npm start",
+    "start:dev": "parcel index.html",
+    "sd": "npm run start:dev",
+    "start": "npm run build && live-server out --port=1234 --no-browser",
+    "s": "npm run start",
     "build": "parcel build index.html --public-url . --out-dir=dist && inliner dist/index.html > out/index.html",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "clean": "rm -rf dist out/* .cache"
   },
   "keywords": [],
   "author": "ashley@codecapers.com.au",
