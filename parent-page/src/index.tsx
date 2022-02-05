@@ -28,34 +28,31 @@ class App extends React.Component<{}, { pluginContent?: string }> {
     }
 
     private onLoad() {
-        setTimeout(() => {
-            console.log(`Configuring the output plugin.`);
+        console.log(`Configuring the output plugin.`);
 
-            this.iframeRef.current?.contentWindow?.postMessage({
-                name: "config",
-                data: {
-                    chart: {
-                        type: 'line',
-                    },
-                    series: [{
-                        name: 'sales',
-                        data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
-                    }],
-                    xaxis: {
-                        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-                    }
+        this.iframeRef.current?.contentWindow?.postMessage({
+            name: "config",
+            data: {
+                chart: {
+                    type: 'line',
                 },
-            }, "*");
-
-            window.addEventListener("message", event => {
-                const payload = event.data;
-                if (payload.name !== undefined) {
-                    console.log(`Message from output plugin:`);
-                    console.log(payload);
+                series: [{
+                    name: 'sales',
+                    data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
+                }],
+                xaxis: {
+                    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
                 }
-            });
-    
-        }, 1000); // TODO: Need an initialisation protocol. The problem is that the plugin might not be ready by the time we send the config event.
+            },
+        }, "*");
+
+        window.addEventListener("message", event => {
+            const payload = event.data;
+            if (payload.name !== undefined) {
+                console.log(`Message from output plugin:`);
+                console.log(payload);
+            }
+        });
     }
 
     render() {
