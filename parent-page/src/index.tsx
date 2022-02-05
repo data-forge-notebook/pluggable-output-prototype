@@ -21,7 +21,7 @@ class App extends React.Component {
                 name: "config",
                 data: {
                     chart: {
-                        type: 'line'
+                        type: 'line',
                     },
                     series: [{
                         name: 'sales',
@@ -83,7 +83,7 @@ class App extends React.Component {
                         className="mx-auto"
                         style={{
                             width: "100%",
-                            height: "490px",
+                            height: "100%",
                         }}
                         ref={this.iframeRef}
                         src={this.url}
