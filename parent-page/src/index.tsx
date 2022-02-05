@@ -14,6 +14,8 @@ class App extends React.Component<{}, { pluginContent?: string }> {
         this.state = {};
 
         this.iframeRef = React.createRef<HTMLIFrameElement>();
+
+        this.onLoad = this.onLoad.bind(this);
     }
 
     async componentDidMount() {
@@ -23,7 +25,9 @@ class App extends React.Component<{}, { pluginContent?: string }> {
         this.setState({
             pluginContent: pluginContent,
         });
+    }
 
+    private onLoad() {
         setTimeout(() => {
             console.log(`Configuring the output plugin.`);
 
@@ -51,7 +55,7 @@ class App extends React.Component<{}, { pluginContent?: string }> {
                 }
             });
     
-        }, 5000); // TODO: Need an initialisation protocol. The problem is that the plugin might not be ready by the time we send the config event.
+        }, 1000); // TODO: Need an initialisation protocol. The problem is that the plugin might not be ready by the time we send the config event.
     }
 
     render() {
@@ -89,26 +93,29 @@ class App extends React.Component<{}, { pluginContent?: string }> {
                         backgroundColor: "white",
                     }}
                     >
-                    <iframe 
-                        className="mx-auto"
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                        }}
-                        ref={this.iframeRef}
-                        //
-                        // Uncomment this for the live URL.
-                        //
-                        // src={this.url}
+                    {this.state.pluginContent !== undefined
+                        && <iframe 
+                            className="mx-auto"
+                            style={{
+                                width: "100%",
+                                height: "100%",
+                            }}
+                            onLoad={this.onLoad}
+                            ref={this.iframeRef}
+                            //
+                            // Uncomment this for the live URL.
+                            //
+                            // src={this.url}
 
-                        //
-                        // Uncomment this for the inline plugin HTML.
-                        //
-                        srcDoc={this.state.pluginContent}
+                            //
+                            // Uncomment this for the inline plugin HTML.
+                            //
+                            srcDoc={this.state.pluginContent}
 
-                        title="Output plugin"
-                        sandbox="allow-scripts"
-                        />
+                            title="Output plugin"
+                            sandbox="allow-scripts"
+                            />
+                    }
                 </div>
             </div>
         );                
