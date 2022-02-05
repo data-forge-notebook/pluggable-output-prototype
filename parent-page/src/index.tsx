@@ -1,7 +1,8 @@
+import axios from "axios";
 import React from "react";
 import ReactDOM from "react-dom";
 
-class App extends React.Component {
+class App extends React.Component<{}, { pluginContent?: string }> {
 
     private iframeRef: React.RefObject<HTMLIFrameElement>;
 
@@ -10,10 +11,19 @@ class App extends React.Component {
     constructor(props: any) {
         super(props);
 
+        this.state = {};
+
         this.iframeRef = React.createRef<HTMLIFrameElement>();
     }
 
-    componentDidMount() {
+    async componentDidMount() {
+
+        const { data: pluginContent } = await axios.get(this.url);
+
+        this.setState({
+            pluginContent: pluginContent,
+        });
+
         setTimeout(() => {
             console.log(`Configuring the output plugin.`);
 
@@ -41,7 +51,7 @@ class App extends React.Component {
                 }
             });
     
-        }, 1000); // TODO: Need an initialisation protocol. The problem is that the plugin might not be ready by the time we send the config event.
+        }, 5000); // TODO: Need an initialisation protocol. The problem is that the plugin might not be ready by the time we send the config event.
     }
 
     render() {
@@ -86,7 +96,16 @@ class App extends React.Component {
                             height: "100%",
                         }}
                         ref={this.iframeRef}
-                        src={this.url}
+                        //
+                        // Uncomment this for the live URL.
+                        //
+                        // src={this.url}
+
+                        //
+                        // Uncomment this for the inline plugin HTML.
+                        //
+                        srcDoc={this.state.pluginContent}
+
                         title="Output plugin"
                         sandbox="allow-scripts"
                         />
