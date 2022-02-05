@@ -90,29 +90,32 @@ class App extends React.Component<{}, { pluginContent?: string }> {
                         backgroundColor: "white",
                     }}
                     >
-                    {this.state.pluginContent !== undefined
-                        && <iframe 
-                            className="mx-auto"
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                            onLoad={this.onLoad}
-                            ref={this.iframeRef}
-                            //
-                            // Uncomment this for the live URL.
-                            //
-                            // src={this.url}
+                    <iframe 
+                        className="mx-auto"
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                        }}
+                        onLoad={this.onLoad}
+                        ref={this.iframeRef}
 
-                            //
-                            // Uncomment this for the inline plugin HTML.
-                            //
-                            srcDoc={this.state.pluginContent}
+                        //
+                        // Uncomment this to load from file.
+                        //
 
-                            title="Output plugin"
-                            sandbox="allow-scripts"
-                            />
-                    }
+                        //
+                        // Uncomment this for the live URL.
+                        //
+                        // src={this.url}
+
+                        //
+                        // Uncomment this for the inline plugin HTML.
+                        //
+                        srcDoc={this.state.pluginContent}
+
+                        title="Output plugin"
+                        sandbox="allow-scripts"
+                        />
                 </div>
             </div>
         );                
