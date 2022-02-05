@@ -8,6 +8,13 @@ This is a prototype of how "pluggable cell outputs" (user creatable visualizatio
 
 [Click for the main DFN code repository](https://github.com/data-forge-notebook/editor-core)
 
+## File system
+
+- child-page/
+  - A static web page that emulates how a DFN v2 output plugin might be created.
+- parent-page/
+  - Demonstration of how DFN v2 will embed an output plugin using an iframe.
+
 ## Get it running
 
 You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) installed.
@@ -24,7 +31,7 @@ Change directory into the local code repository:
 cd pluggable-output-prototype
 ```
 
-First run the dev server for the child web page (this web page serves the output plugin):
+First run the prod build and server for the child web page (this web page serves the output plugin):
 
 ```bash
 cd child-page
@@ -40,5 +47,5 @@ npm install
 npm start
 ```
 
-Open the web page for the parent and check the console. You'll see output of a message from the parent to the child, and then from the child to the parent.
+Open the web page for the parent (http://127.0.0.1:5001) and check the console. You'll see output of a message from the parent to the child, and then from the child to the parent.
 

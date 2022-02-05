@@ -5,7 +5,7 @@ class App extends React.Component {
 
     private iframeRef: React.RefObject<HTMLIFrameElement>;
 
-    private url = "http://localhost:1234";
+    private url = "http://127.0.0.1:5000";
 
     constructor(props: any) {
         super(props);

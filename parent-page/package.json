@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel server --host=127.0.0.1 --port=5001 index.html",
     "s": "npm start",
     "build": "parcel build index.html --out-dir=dist",
     "tsc": "tsc"
