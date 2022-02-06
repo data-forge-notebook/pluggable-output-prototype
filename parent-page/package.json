@@ -2,12 +2,13 @@
   "name": "react-parcel-typescript-example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "parcel server --host=127.0.0.1 --port=5001 index.html",
     "s": "npm start",
-    "build": "parcel build index.html --out-dir=dist",
-    "tsc": "tsc"
+    "build": "parcel build index.html --public-url . --out-dir=dist",
+    "tsc": "tsc",
+    "electron": "npm run build && electron ."
   },
   "keywords": [],
   "author": "ashley@codecapers.com.au",
@@ -23,6 +24,7 @@
     "@types/react-dom": "^17.0.11",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "electron": "^17.0.0",
     "less": "^4.1.2",
     "live-server": "^1.2.1",
     "parcel-bundler": "^1.12.5",

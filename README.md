@@ -15,9 +15,11 @@ This is a prototype of how "pluggable cell outputs" (user creatable visualizatio
 - parent-page/
   - Demonstration of how DFN v2 will embed an output plugin using an iframe.
 
-## Get it running
+## Prereqs
 
 You need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/) installed.
+
+## Setup
 
 Open a terminal and clone this repository:
 
@@ -31,7 +33,9 @@ Change directory into the local code repository:
 cd pluggable-output-prototype
 ```
 
-First run the prod build and server for the child web page (this web page serves the output plugin):
+## First, run the web server for the output plugin
+
+Run the build and server for the child web page:
 
 ```bash
 cd child-page
@@ -39,7 +43,19 @@ npm install
 npm start
 ```
 
-Then open another terminal and run the dev server for the parent web page (this web page simulates the embedding of the output plugin):
+## Run it: Electron
+
+Open a new terminal and run the parent-page in Electron:
+
+```bash
+cd parent-page
+npm install
+npm run electron
+```
+
+# Run it: Browser
+
+Open a new terminal and run the dev server for the parent web page:
 
 ```bash
 cd parent-page

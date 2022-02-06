@@ -8,8 +8,9 @@ class App extends React.Component<{}, { pluginContent?: string }> {
 
     //
     // If you are trying to load this from a file, you will need to change this path.
+    // Also this doesn't work in the browser, but you can try it out under Electron.
     //
-    private file = "file://c:/projects/data-forge-notebook/prototypes/pluggable-output-prototype/child-page/out/index.html"; 
+    // private file = "file://c:/projects/data-forge-notebook/prototypes/pluggable-output-prototype/child-page/out/index.html"; 
 
     private url = "http://127.0.0.1:5000";
 
